@@ -1,0 +1,8 @@
+/var/log/janus {
+   missingok
+   rotate 1
+   compress
+   weekly
+   create 0644 root root
+}
+

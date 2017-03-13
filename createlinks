@@ -1,0 +1,40 @@
+#!/usr/bin/perl -w
+
+use esmith::Build::CreateLinks qw(:all);
+
+#
+# nethserver-nethvoice-update event
+#
+#
+
+my $event = 'nethserver-janus-update';
+
+event_actions($event, qw(
+    initialize-default-databases 00
+    nethserver-janus-conf 50
+));
+
+event_templates($event, qw(
+    /opt/janus/etc/janus/
+    /opt/janus/share/janus/certs/cert.pem
+    /opt/janus/share/janus/certs/cert.key
+));
+
+templates2events("/opt/janus/share/janus/certs/cert.pem","certificate-update");
+templates2events("/opt/janus/share/janus/certs/cert.key","certificate-update");
+
+event_services($event ,qw(
+        janus-gateway restart
+));
+
+#$event = "interface-update";
+
+#event_actions ($event , "nethvoice-update-ip", "70");
+
+# expand httpd templates and reload httpd when registering server
+#templates2events("/etc/httpd/conf.d/default-virtualhost.inc","nethserver-register-save");
+#templates2events("/etc/httpd/conf.d/nethvoice.conf","nethserver-register-save");
+#event_services("nethserver-register-save",qw(
+#        httpd reload
+#));
+
