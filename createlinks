@@ -15,7 +15,11 @@ event_actions($event, qw(
 ));
 
 event_templates($event, qw(
-    /opt/janus/etc/janus/
+    /opt/janus/etc/janus/janus.cfg
+    /opt/janus/etc/janus/janus.plugin.sip.cfg
+    /opt/janus/etc/janus/janus.transport.http.cfg
+    /opt/janus/etc/janus/janus.transport.pfunix.cfg
+    /opt/janus/etc/janus/janus.transport.websockets.cfg
     /opt/janus/share/janus/certs/cert.pem
     /opt/janus/share/janus/certs/cert.key
 ));
