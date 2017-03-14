@@ -32,7 +32,7 @@ debug_level = 4				; Debug/logging level, valid values are 0-7
 ;							users. For this to work, the Admin API MUST
 ;							be enabled, as tokens are added and removed
 ;							through messages sent there.
-admin_secret = {$db_pwd}	; String that all Janus requests must contain
+admin_secret = {$janus_pwd}	; String that all Janus requests must contain
 ;								  to be accepted/authorized by the admin/monitor.
 ;								  only needed if you enabled the admin API
 ;								  in any of the available transports.
