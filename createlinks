@@ -28,5 +28,6 @@ templates2events("/opt/janus/share/janus/certs/cert.key","certificate-update");
 
 event_services($event ,qw(
         janus-gateway restart
+        httpd reload
 ));
 
