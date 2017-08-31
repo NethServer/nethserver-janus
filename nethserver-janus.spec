@@ -1,5 +1,5 @@
 Name:    nethserver-janus
-Version: 0.0.1
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 Group: Network
@@ -33,3 +33,6 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Thu Aug 31 2017 Edoardo Spadoni <edoardo.spadoni@nethesis.it> - 1.0.0-1
+Release 1.0.0
+
