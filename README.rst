@@ -4,6 +4,16 @@ nethserver-janus
 
 This package configure Janus Gateway https://github.com/meetecho/janus-gateway
 
+Start Janus Gateway at boot
+===========================
+
+To start Janus Gateway, launch
+`systemctl start janus-gateway`
+
+To start it at boot
+`config setprop janus-gateway status enabled`
+
+
 NAT modes
 =========
 
