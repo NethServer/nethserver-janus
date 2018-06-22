@@ -10,7 +10,7 @@ Start Janus Gateway at boot
 To start Janus Gateway and enable it at boot, execute: ::
 
   config setprop janus-gateway status enabled
-  /etc/e-smith/events/actions/runlevel-adjust
+  signal-event nethserver-janus-update
 
 
 NAT modes
