@@ -7,11 +7,10 @@ This package configure Janus Gateway https://github.com/meetecho/janus-gateway
 Start Janus Gateway at boot
 ===========================
 
-To start Janus Gateway, launch
-`systemctl start janus-gateway`
+To start Janus Gateway and enable it at boot, execute: ::
 
-To start it at boot
-`config setprop janus-gateway status enabled`
+  config setprop janus-gateway status enabled
+  /etc/e-smith/events/actions/runlevel-adjust
 
 
 NAT modes
