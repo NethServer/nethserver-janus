@@ -1,5 +1,5 @@
 Name:    nethserver-janus
-Version: 1.0.3
+Version: 1.0.4
 Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 Group: Network
@@ -33,6 +33,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Thu Sep 06 2018 Stefano Fancello <stefano.fancello@nethesis.it> - 1.0.4-1
+- Janus gateway: logfile no more written after logrotate - Bug NethServer/dev#5576
+
 * Tue Jul 24 2018 Alessandro Polidori <alessandro.polidori@gmail.com> - 1.0.3-1
 - Update janus-gateway to 0.4.3 - NethServer/dev#5511
 
