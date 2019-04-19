@@ -248,6 +248,10 @@ nat: \{
 # names to identify the plugins to disable. By default all available
 # plugins are enabled and loaded at startup.
 plugins: \{
+        {
+    my $dplugins = ${'janus-gateway'}{DisabledPlugins} || '';
+    $OUT.= "disable = \"$dplugins\"";
+        }
 \}
 
 # You can choose which of the available transports should be enabled or
