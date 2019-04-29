@@ -36,3 +36,26 @@ There are 4 prop under ``janus-gateway`` key to configure NAT mode and options:
 
 For configuring TURN, create a template custom
 
+Disable plugins
+===============
+
+All plugins are enabled by default. To disable some of them execute:
+
+.. code:: bash
+
+  config setprop janus-gateway DisabledPlugins "<PLUGINS_NAMES_SEPARATED_BY_COMMAS>"
+  signal-event nethserver-janus-update
+  
+Example:
+
+.. code:: bash
+
+  config setprop janus-gateway DisabledPlugins "libjanus_voicemail.so,libjanus_recordplay.so"
+  signal-event nethserver-janus-update
+  
+To re-enable them:
+
+.. code:: bash
+
+  config setprop janus-gateway DisabledPlugins ""
+  signal-event nethserver-janus-update
