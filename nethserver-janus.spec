@@ -1,5 +1,5 @@
 Name:    nethserver-janus
-Version: 1.0.11
+Version: 1.0.12
 Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 Group: Network
@@ -33,6 +33,11 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Tue May 28 2019 Alessandro Polidori <alessandro.polidori@nethesis.it> - 1.0.12-1
+- Janus-Gateway: update to the latest commit on master (a16862) - NethServer/dev#5757
+- Janus: enable all plugins - nethserver/dev#5749
+- Janus-Gateway: update to the latest commit on master (0b80a02) - nethserver/dev#5757
+
 * Fri Apr 19 2019 Alessandro Polidori <alessandro.polidori@gmail.com> - 1.0.11-1
 - Fix Janus to support DTLS 1.2 needed by new Chrome M74 release - Bug NethServer/dev#5740
 
