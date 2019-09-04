@@ -1,5 +1,5 @@
 Name:    nethserver-janus
-Version: 1.0.13
+Version: 1.0.14
 Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 Group: Network
@@ -33,6 +33,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed Sep 04 2019 Alessandro Polidori <alessandro.polidori@nethesis.it> - 1.0.14-1
+- Janus-Gateway: update to the latest commit on master (dca6fec) - NethServer/dev#5786
+
 * Tue Jul 02 2019 Alessandro Polidori <alessandro.polidori@nethesis.it> - 1.0.13-1
 - Janus-Gateway: update to the latest commit on master (f86597c) - NethServer/dev#5774
 
