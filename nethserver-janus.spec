@@ -1,5 +1,5 @@
 Name:    nethserver-janus
-Version: 1.0.16
+Version: 1.0.17
 Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 Group: Network
@@ -7,7 +7,7 @@ License: GPLv3
 BuildArch: noarch
 Packager: Nethesis <info@nethesis.it>
 Source0: %{name}-%{version}.tar.gz
-Requires: janus-gateway >= 0.7.6.0
+Requires: janus-gateway >= 0.7.6.1
 BuildRequires: nethserver-devtools
 
 %description
