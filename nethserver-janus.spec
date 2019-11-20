@@ -1,6 +1,6 @@
 Name:    nethserver-janus
 Version: 1.0.16
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 Group: Network
 License: GPLv3
