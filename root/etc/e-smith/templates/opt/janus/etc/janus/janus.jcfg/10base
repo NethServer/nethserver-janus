@@ -1,62 +1,61 @@
 {
-				use NethServer::Password;
-				$janus_pwd = NethServer::Password::store('JanusGateway') || die('Could not generate Janus password!');
-				return '';
+	use NethServer::Password;
+	$janus_pwd = NethServer::Password::store('JanusGateway') || die('Could not generate Janus password!');
+	return '';
 }
-
 # General configuration: folders where the configuration and the plugins
 # can be found, how output should be logged, whether Janus should run as
 # a daemon or in foreground, default interface to use, debug/logging level
 # and, if needed, shared apisecret and/or token authentication mechanism
 # between application(s) and Janus.
 general: \{
-	configs_folder = "/opt/janus/etc/janus"			# Configuration files folder
+	configs_folder = "/opt/janus/etc/janus"				# Configuration files folder
 	plugins_folder = "/opt/janus/lib/janus/plugins"			# Plugins folder
-	transports_folder = "/opt/janus/lib/janus/transports"	# Transports folder
+	transports_folder = "/opt/janus/lib/janus/transports"		# Transports folder
 	events_folder = "/opt/janus/lib/janus/events"			# Event handlers folder
 
-		# The next settings configure logging
-	log_to_stdout = false					# Whether the Janus output should be written
-											# to stdout or not (default=true)
-	log_to_file = "/var/log/janus"		# Whether to use a log file or not
+	# The next settings configure logging
+	log_to_stdout = false						# Whether the Janus output should be written
+									# to stdout or not (default=true)
+	log_to_file = "/var/log/janus"					# Whether to use a log file or not
 	debug_level = 4							# Debug/logging level, valid values are 0-7
-	debug_timestamps = true				# Whether to show a timestamp for each log line
-	#debug_colors = false					# Whether colors should be disabled in the log
+	debug_timestamps = true						# Whether to show a timestamp for each log line
+	#debug_colors = false						# Whether colors should be disabled in the log
 	#debug_locks = true						# Whether to enable debugging of locks (very verbose!)
 
-		# This is what you configure if you want to launch Janus as a daemon
+	# This is what you configure if you want to launch Janus as a daemon
 	#daemonize = true						# Whether Janus should run as a daemon
-											# or not (default=run in foreground)
-	#pid_file = "/path/to/janus.pid"		# PID file to create when Janus has been
-											# started, and to destroy at shutdown
+									# or not (default=run in foreground)
+	#pid_file = "/path/to/janus.pid"				# PID file to create when Janus has been
+									# started, and to destroy at shutdown
 
-		# There are different ways you can authenticate the Janus and Admin APIs
-	#api_secret = "janusrocks"		# String that all Janus requests must contain
+	# There are different ways you can authenticate the Janus and Admin APIs
+	#api_secret = "janusrocks"					# String that all Janus requests must contain
 									# to be accepted/authorized by the Janus core.
 									# Useful if you're wrapping all Janus API requests
 									# in your servers (that is, not in the browser,
 									# where you do the things your way) and you
 									# don't want other application to mess with
 									# this Janus instance.
-	#token_auth = true				# Enable a token based authentication
+	#token_auth = true						# Enable a token based authentication
 									# mechanism to force users to always provide
 									# a valid token in all requests. Useful if
 									# you want to authenticate requests from web
 									# users.
-	#token_auth_secret = "janus"	# Use HMAC-SHA1 signed tokens (with token_auth). Note that
+	#token_auth_secret = "janus"					# Use HMAC-SHA1 signed tokens (with token_auth). Note that
 									# without this, the Admin API MUST
 									# be enabled, as tokens are added and removed
 									# through messages sent there.
-	admin_secret = "{$janus_pwd}"	# String that all Janus requests must contain
+	admin_secret = "{$janus_pwd}"					# String that all Janus requests must contain
 									# to be accepted/authorized by the admin/monitor.
 									# only needed if you enabled the admin API
 									# in any of the available transports.
 
-		# Generic settings
-	#interface = "1.2.3.4"			# Interface to use (will be used in SDP)
-	#server_name = "MyJanusInstance"# Public name of this Janus instance
+	# Generic settings
+	#interface = "1.2.3.4"						# Interface to use (will be used in SDP)
+	#server_name = "MyJanusInstance"				# Public name of this Janus instance
 									# as it will appear in an info request
-	#session_timeout = 60			# How long (in seconds) we should wait before
+	#session_timeout = 60						# How long (in seconds) we should wait before
 									# deciding a Janus session has timed out. A
 									# session times out when no request is received
 									# for session_timeout seconds (default=60s).
@@ -65,12 +64,12 @@ general: \{
 									# risk having orphaned sessions (sessions not
 									# controlled by any transport and never freed).
 									# To avoid timeouts, keep-alives can be used.
-	#candidates_timeout = 45		# How long (in seconds) we should keep hold of
+	#candidates_timeout = 45					# How long (in seconds) we should keep hold of
 									# pending (trickle) candidates before discarding
 									# them (default=45s). Notice that setting this
 									# to 0 will NOT disable the timeout, but will
 									# be considered an invalid value and ignored.
-	#reclaim_session_timeout = 0	# How long (in seconds) we should wait for a
+	#reclaim_session_timeout = 0					# How long (in seconds) we should wait for a
 									# janus session to be reclaimed after the transport
 									# is gone. After the transport is gone, a session
 									# times out when no request is received for
@@ -78,7 +77,7 @@ general: \{
 									# Setting this to 0 will disable the timeout
 									# mechanism, and sessions will be destroyed immediately
 									# if the transport is gone.
-	#recordings_tmp_ext = "tmp"		# The extension for recordings, in Janus, is
+	#recordings_tmp_ext = "tmp"					# The extension for recordings, in Janus, is
 									# .mjr, a custom format we devised ourselves.
 									# By default, we save to .mjr directly. If you'd
 									# rather the recording filename have a temporary
@@ -88,7 +87,7 @@ general: \{
 									# external scripts), then uncomment and set the
 									# recordings_tmp_ext property to the extension
 									# to add to the base (e.g., tmp --> .mjr.tmp).
-	#event_loops = 8				# By default, Janus handles each have their own
+	#event_loops = 8						# By default, Janus handles each have their own
 									# event loop and related thread for all the media
 									# routing and management. If for some reason you'd
 									# rather limit the number of loop/threads, and
@@ -155,17 +154,17 @@ media: \{
 # be used for gathering candidates, and enable or disable the
 # internal libnice debugging, if needed.
 nat: \{
-	{
+{
     my $mode = ${'janus-gateway'}{NatMode} || 'stun';
     if ($mode eq 'stun') {
         my $server = ${'janus-gateway'}{StunServer} || 'stun1.l.google.com';
         my $port = ${'janus-gateway'}{StunPort} || '19302';
-        $OUT.= "stun_server = \"$server\"\n";
+        $OUT.= "	stun_server = \"$server\"\n";
         $OUT.= "        stun_port = $port\n";
     } elsif ($mode eq 'ice') {
-        $OUT.= "ice_lite = true\n";
+        $OUT.= "	ice_lite = true\n";
     }
-	}
+}
 	nice_debug = false
 	#full_trickle = true
 	#ice_tcp = true
@@ -178,16 +177,15 @@ nat: \{
 	# such, use the option with caution and only if you know what you're doing.
 	# Make sure you keep ICE Lite disabled, though, as it's not strictly
 	# speaking a publicly reachable server, and a NAT is still involved.
-
-	{
+{
     my $mode = ${'janus-gateway'}{NatMode} || 'stun';
     my $ip = ${'janus-gateway'}{PublicIP} || '';
     if ($mode eq '1:1' && $ip ne '') {
-        $OUT.= "nat_1_1_mapping = \"$ip\"\n";
+        $OUT.= "	nat_1_1_mapping = \"$ip\"\n";
+    } else {
+        $OUT.= "	#nat_1_1_mapping = \"\"\n";
     }
-	}
-	
-
+}
 	# You can configure a TURN server in two different ways: specifying a
 	# statically configured TURN server, and thus provide the address of the
 	# TURN server, the transport (udp/tcp/tls) to use, and a set of valid
@@ -248,10 +246,10 @@ nat: \{
 # names to identify the plugins to disable. By default all available
 # plugins are enabled and loaded at startup.
 plugins: \{
-        {
+{
     my $dplugins = ${'janus-gateway'}{DisabledPlugins} || '';
-    $OUT.= "disable = \"$dplugins\"";
-        }
+    $OUT.= "	disable = \"$dplugins\"";
+}
 \}
 
 # You can choose which of the available transports should be enabled or
