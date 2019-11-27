@@ -39,7 +39,7 @@ For configuring TURN, create a template custom
 STUN and ICE enforced interfaces
 ================================
 
-You can choose which interface should be used for the ICE candidates gathering. By default Janus try to use all interfaces except 'vmnet', that is VMware interface which is known to cause problems. You can modify this behavior by explicit list interfaces to use or by listing interfaces to exclude. You can configure one of those two props:
+You can choose which interface should be used for the ICE candidates gathering. In default configuration Janus try to use all interfaces, except 'vmnet*', that is VMware interface which is known to cause problems, 'tun*' and 'tap*' interfaces. You can modify this behavior by explicit list interfaces to use or by listing interfaces to exclude. You can configure one of those two props:
 
 - ``ICEEnforceList`` comma separated list of interfaces to use for ICE gathering. For instances "e0,e1".
 
