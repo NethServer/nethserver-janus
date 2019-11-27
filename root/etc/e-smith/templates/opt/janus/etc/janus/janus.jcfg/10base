@@ -248,8 +248,6 @@ nat: \{
     my $ice_ignore_list = ${'janus-gateway'}{ICEIgnoreList} || '';
     if ($ice_ignore_list ne '') {
 	$OUT.= "	ice_ignore_list = \"$ice_ignore_list\"";
-    } elsif ($ice_enforce_list eq '') {
-	$OUT.= "	ice_ignore_list = \"vmnet\"";
     } else {
 	$OUT.= "	#ice_ignore_list = \"vmnet\"";
     }
