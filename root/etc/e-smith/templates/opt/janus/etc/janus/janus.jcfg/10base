@@ -182,8 +182,6 @@ nat: \{
     my $ip = ${'janus-gateway'}{PublicIP} || '';
     if ($mode eq '1:1' && $ip ne '') {
         $OUT.= "	nat_1_1_mapping = \"$ip\"\n";
-    } else {
-        $OUT.= "	#nat_1_1_mapping = \"\"\n";
     }
 }
 	# You can configure a TURN server in two different ways: specifying a
@@ -224,7 +222,7 @@ nat: \{
     if ($ice_enforce_list ne '') {
 	$OUT.= "	ice_enforce_list = \"$ice_enforce_list\"";
     } else {
-	$OUT.= "	#ice_enforce_list = \"eth0\"";
+	$OUT.= "	#ice_enforce_list = \"\"";
     }
 }
 
@@ -245,12 +243,8 @@ nat: \{
 	# has been configured. By default, Janus ignores all interfaces whose
 	# name starts with 'vmnet', to skip VMware interfaces:
 {
-    my $ice_ignore_list = ${'janus-gateway'}{ICEIgnoreList} || '';
-    if ($ice_ignore_list ne '') {
+	my $ice_ignore_list = ${'janus-gateway'}{ICEIgnoreList} || 'vmnet';
 	$OUT.= "	ice_ignore_list = \"$ice_ignore_list\"";
-    } else {
-	$OUT.= "	#ice_ignore_list = \"vmnet\"";
-    }
 }
 \}
 
