@@ -1,5 +1,5 @@
 Name:    nethserver-janus
-Version: 1.0.18
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 Group: Network
@@ -33,6 +33,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Mon Dec 02 2019 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.1.0-1
+- Nethserver-janus: allow to configure ICE gathering candidate interfaces - NethServer/dev#5960
+
 * Thu Nov 21 2019 Alessandro Polidori <alessandro.polidori@nethesis.it> - 1.0.18-1
 - spec: inc version only to restart new janus v 0.7.6.1 (#19)
 
