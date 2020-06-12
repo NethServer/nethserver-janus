@@ -7,7 +7,7 @@ License: GPLv3
 BuildArch: noarch
 Packager: Nethesis <info@nethesis.it>
 Source0: %{name}-%{version}.tar.gz
-Requires: janus-gateway >= 0.9.5
+Requires: janus-gateway >= 0.10.1
 BuildRequires: nethserver-devtools
 
 %description
