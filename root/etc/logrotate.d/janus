@@ -1,9 +1,6 @@
 /var/log/janus {
    copytruncate
    missingok
-   rotate 1
-   compress
-   weekly
    create 0644 root root
 }
 
