@@ -83,11 +83,9 @@ To use it:
      ssh IP -L 7088:localhost:7088
  
 
-4. extract the Admin Api secret:
+4. extract the Admin Api secret: ::
 
-.. code:: bash
-
-  grep admin_secret /opt/janus/etc/janus/janus.jcfg | cut -d ' ' -f 3
+     grep admin_secret /opt/janus/etc/janus/janus.jcfg | cut -d ' ' -f 3
 
 5. Follow the official documentation on how to use admin api: https://janus.conf.meetecho.com/docs/admin.html
 
