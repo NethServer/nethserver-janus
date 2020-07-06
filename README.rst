@@ -68,3 +68,25 @@ To re-enable them:
 
   config setprop janus-gateway DisabledPlugins ""
   signal-event nethserver-janus-update
+  
+Debug problems with Admin Api
+=============================
+
+The Janus Admin Api are used to debug problems (e.g. ssl, ice, ...).
+  
+``nethserver-janus`` automatically enables Admin Api on HTTP ``localhost`` on port ``7088``.
+
+To use it:
+
+1. make an ssh tunnel: ::
+ 
+     ssh IP -L 7088:localhost:7088
+ 
+
+4. extract the Admin Api secret: ::
+
+     grep admin_secret /opt/janus/etc/janus/janus.jcfg | cut -d ' ' -f 3
+
+5. Follow the official documentation on how to use admin api: https://janus.conf.meetecho.com/docs/admin.html
+
+Note: here is an example on how to use it with Node.js: https://gist.github.com/alepolidori/720e47448e82b99ef3495a1849773ecc
