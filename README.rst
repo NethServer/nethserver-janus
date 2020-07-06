@@ -78,11 +78,10 @@ The Janus Admin Api are used to debug problems (e.g. ssl, ice, ...).
 
 To use it:
 
-1. make an ssh tunnel:
-
-.. code:: bash
-
-  ssh IP -L 7088:localhost:7088
+1. make an ssh tunnel: ::
+ 
+     ssh IP -L 7088:localhost:7088
+ 
 
 4. extract the Admin Api secret:
 
