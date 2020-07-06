@@ -1,5 +1,5 @@
 Name:    nethserver-janus
-Version: 1.1.1
+Version: 1.2.0
 Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 License: GPLv3
@@ -32,6 +32,11 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Mon Jul 06 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.2.0-1
+- Enable Janus Admin Api as default on localhost - NethServer/dev#6217
+- Development builds for Janus and sofia-sip - nethesis/dev#5836
+- Janus-Gateway: upgrade to 922b392 - NethServer/dev#6195
+
 * Thu May 28 2020 Alessandro Polidori <alessandro.polidori@nethesis.it> - 1.1.1-1
 - Janus-Gateway: upgrade to v0.9.4 - NethServer/dev#6135
 
