@@ -5,7 +5,7 @@ Summary: Janus WebRTC Gateway NethServer configuration
 License: GPLv3
 BuildArch: noarch
 Source0: %{name}-%{version}.tar.gz
-Requires: janus-gateway >= 0.10.10
+Requires: janus-gateway >= 0.12.3
 BuildRequires: nethserver-devtools
 
 %description
