@@ -1,5 +1,5 @@
 Name:    nethserver-janus
-Version: 1.2.2
+Version: 1.2.3
 Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 License: GPLv3
@@ -32,6 +32,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Fri Sep 30 2022 Stefano Fancello <stefano.fancello@nethesis.it> - 1.2.3-1
+- Update Janus Gateway to 0.12.3 - nethesis/dev#6178
+
 * Mon Mar 01 2021 Alessandro Polidori <alessandro.polidori@nethesis.it> - 1.2.2-1
 - Janus-Gateway: upgrade to 0.10.10 (7732127) - NethServer/dev#6416
 
