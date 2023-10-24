@@ -1,6 +1,6 @@
 Name:    nethserver-janus
-Version: 1.2.3
-Release: 2%{?dist}
+Version: 1.2.4
+Release: 1%{?dist}
 Summary: Janus WebRTC Gateway NethServer configuration
 License: GPLv3
 BuildArch: noarch
@@ -32,6 +32,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Tue Oct 24 2023 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.2.4-1
+- Bump version to restart janus after upstream nss update - NethServer/dev#6766
+
 * Thu Oct 24 2023 Stefano Fancello <stefano.fancello@nethesis.it> - 1.2.3-2
 - Bump version to force restart - NethServer/dev#6766
 
