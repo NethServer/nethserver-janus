@@ -244,7 +244,7 @@ nat: \{
 	# name starts with 'vmnet', to skip VMware interfaces:
 {
 	my $ice_ignore_list = ${'janus-gateway'}{ICEIgnoreList} || 'vmnet';
-	$OUT.= "	ice_ignore_list = \"$ice_ignore_list\"";
+	$OUT.= "	ice_ignore_list = \"ns8,$ice_ignore_list\"";
 }
 \}
 
