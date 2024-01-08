@@ -31,3 +31,13 @@ event_services($event ,qw(
         httpd reload
 ));
 
+#
+# Certificate-update event
+#
+
+$event = "certificate-update";
+
+event_services($event ,qw(
+        janus-gateway restart
+));
+
